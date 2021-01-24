@@ -4,6 +4,10 @@
 #include "block.h"
 #include "transactiondata.h"
 
+/*
+The blockchain is a vector of Blocks in this implementation, each
+Block has an index, TransactionData object, previousHash and hash.
+*/
 Block::Block(int idx, TransactionData d, size_t prevHash)
 {
     index = idx;
@@ -17,6 +21,9 @@ int Block::getIndex()
     return index;
 }
 
+/*
+
+*/
 size_t Block::generateHash()
 {
     std::string toHashString = std::to_string(data.amount) + data.fromAddress + data.toAddress + std::to_string(data.timestamp);
