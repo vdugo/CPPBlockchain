@@ -7,3 +7,5 @@ Demonstration:
 g++ main.cpp block.cpp blockchain.cpp
 
 ./a.exe
+
+![Image](https://github.com/vdugo/CPPBlockchain/blob/main/demonstration.png)
