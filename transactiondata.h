@@ -7,8 +7,8 @@
 struct TransactionData
 {
     double amount;
-    std::string toAddress;
     std::string fromAddress;
+    std::string toAddress;
     time_t timestamp;
 
     // constructor
@@ -17,11 +17,11 @@ struct TransactionData
 
     };
 
-    TransactionData(double a, std::string toAddr, std::string fromAddr, time_t t)
+    TransactionData(double a, std::string fromAddr, std::string toAddr, time_t t)
     {
         amount = a;
-        toAddress = toAddr;
         fromAddress = fromAddr;
+        toAddress = toAddr;
         timestamp = t;
     };
 };

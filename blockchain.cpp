@@ -31,9 +31,9 @@ Block* Blockchain::getLatestBlock()
 
 void Blockchain::addBlock(TransactionData d)
 {
-    int index = (int)chain.size() - 1;
+    int index = (int)chain.size();
     size_t previousHash = (int)chain.size() > 0 ? getLatestBlock()->getHash() : 0;
-    Block newBlock(index, d, previousHash;
+    Block newBlock(index, d, previousHash);
     chain.push_back(newBlock);
 }
 
@@ -69,7 +69,8 @@ void Blockchain::printChain()
     for (it = chain.begin(); it != chain.end(); ++it)
     {
         Block currentBlock = *it;
-        std::cout << "Block" << currentBlock.getIndex() << std::endl << "{" << std::endl;
+        std::cout << "Block " << currentBlock.getIndex() << std::endl;
+        std::cout << "{" << std::endl;
         std::cout << "Amount: " << currentBlock.data.amount << std::endl;
         std::cout << "From Address: " << currentBlock.data.fromAddress << std::endl;
         std::cout << "To Address: " << currentBlock.data.toAddress << std::endl;
@@ -77,5 +78,6 @@ void Blockchain::printChain()
         std::cout << "Hash: " << currentBlock.getHash() << std::endl;
         std::cout << "Previous Hash: " << currentBlock.getPreviousHash() << std::endl;
         std::cout << "Is Block Valid?: " << currentBlock.isHashValid() << std::endl;
+        std::cout << "}" << std::endl << std::endl;
     }
 }
